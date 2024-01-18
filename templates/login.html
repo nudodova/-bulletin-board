@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block lab %} Доска объявлений {% endblock %}
+
+{% block main %}
+
+    <h2>Авторизация</h2>
+    <div>
+        {% for error in errors %}
+            {{ error }}
+        {% endfor %}
+    </div>
+    <form method="post">
+        <div>
+            <label for="login">Логин</label>
+            <input type="text" id="login" name="login" value="{{ login or '' }}">
+        </div>
+        <div>
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" value="{{ password or '' }}">
+        </div>
+        <div>
+            <button type="submit">Войти</button>
+        </div>
+    </form>
+{% endblock %}

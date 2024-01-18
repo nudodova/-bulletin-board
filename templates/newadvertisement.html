@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block lab %} Доска объявлений {% endblock %}
+
+{% block main %}
+    <p>
+        
+        <a href="/rgz/advertisements">
+            <button type="submit">Просмотр объявлений</button>
+        </a>
+        <a href="/rgz/newadvertisement">
+            <button type="submit">Создание объявлений</button>
+        </a>
+        <a href="/rgz/login">
+            <button class="log1" type="submit">Авторизация</button>
+        </a>
+        <a href="/rgz/register">
+            <button class="log2" type="submit">Регистрация</button>
+        </a>
+        <a href="/rgz/logout">
+            <button class="log2" type="submit">Выход</button>
+        </a>
+        
+        </p>
+    
+
+    <div class="oform_zam">
+        <h1>Новое объявление</h1>
+
+        {% for error in errors %}
+                {{ error }}
+            {% endfor %}
+
+        <form method="post" style="display: block;">
+            <div>
+                <input type="text" name="advertisement_title" placeholder="Название объявления" style="width: 300px;
+                                                                                            margin-top: 15px;
+                                                                                            margin-bottom: 20px;">
+            </div> 
+            <div>                                                                                              
+                <textarea name="advertisement_text" placeholder="Текст объявления" rows="20" style="width: 300px;
+                margin-top: 15px;
+                margin-bottom: 20px;"></textarea>
+            </div>
+                <input type="submit" value="Apply"/>
+            </div>
+        </form>
+    </div>
+
+
+{% endblock %}

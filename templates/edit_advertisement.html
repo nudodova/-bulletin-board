@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block lab %}Доска объявлений{% endblock %}
+
+{% block main %}
+
+
+
+<h1>Edit Advertisement</h1>
+    
+    <form method="post">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="{{ article[1] }}" required><br>
+
+        <label for="advertisement_text">Advertisement Text:</label>
+        <textarea id="advertisement_text" name="advertisement_text" required>{{ article[2] }}</textarea><br>
+
+        <input type="submit" value="Save Changes">
+    </form>
+
+    <a href="/rgz/advertisements">Cancel</a>
+
+{% endblock %}

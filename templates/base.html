@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анастасия Удодова. {% block lab %}{% endblock %}</title>
+    {% if request.cookies.get('text_color')  and request.cookies.get('background_color') and request.cookies.get('font_size') %}
+    <style>
+        body {
+            color: {{ request.cookies.get('text_color') }};
+            background-color: {{ request.cookies.get('background_color') }};
+            font-size: {{ request.cookies.get('font_size') }}px;
+        }
+    </style>
+    {% endif %}
+    {% block script %}
+    
+    {% endblock %}
+</head>
+
+<body>
+    <header>
+        WEB-программирование, 2 часть. {{ self.lab() }}
+    </header>
+
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+
+    <footer>
+        &copy; Анастасия Удодова, ФБИ-14, 3 курс, 2023
+    </footer>
+</body>
+</html>

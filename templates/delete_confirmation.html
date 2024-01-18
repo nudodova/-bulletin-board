@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block lab %}Доска объявлений{% endblock %}
+
+{% block main %}
+
+<h1>Удаление объявления</h1>
+    <p>Вы действительно хотите удалить объявление?</p>
+    <p><strong>ID:</strong> {{ article[0] }}</p>
+    <p><strong>Title:</strong> {{ article[1] }}</p>
+    <p><strong>Advertisement Text:</strong> {{ article[2] }}</p>
+
+    <form method="post">
+        <input type="submit" value="Удалить">
+    </form>
+
+    
+    <a href="/rgz/advertisements">Отмена</a>
+
+{% endblock %}
