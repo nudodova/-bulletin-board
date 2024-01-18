@@ -168,7 +168,6 @@ def list_articles():
     conn = dbConnect()
     cur = conn.cursor()
 
-    # Изменен SQL-запрос для выборки всех объявлений с именем пользователя
     cur.execute("SELECT id, title, advertisement_text FROM advertisements;")
     articles_data = cur.fetchall()
 
